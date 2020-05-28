@@ -1,6 +1,7 @@
 package com.cn.wy.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name="t_user")
@@ -24,7 +25,8 @@ public class User {
         this.id = id;
     }
 
-    @Column(name="USER_NAME")
+    @Basic
+    @Column(name = "USER_NAME", nullable = true)
     public String getUserName() {
         return userName;
     }
@@ -33,7 +35,8 @@ public class User {
         this.userName = userName;
     }
 
-    @Column(name="USER_SEX")
+    @Basic
+    @Column(name="USER_SEX", nullable = true)
     public String getUserSex() {
         return userSex;
     }
@@ -42,7 +45,8 @@ public class User {
         this.userSex = userSex;
     }
 
-    @Column(name="USER_IDENTITY")
+    @Basic
+    @Column(name="USER_IDENTITY", nullable = true)
     public String getUserIdentity() {
         return userIdentity;
     }
@@ -51,7 +55,8 @@ public class User {
         this.userIdentity = userIdentity;
     }
 
-    @Column(name="USER_PHONE")
+    @Basic
+    @Column(name="USER_PHONE", nullable = true)
     public String getUserPhone() {
         return userPhone;
     }
@@ -60,7 +65,8 @@ public class User {
         this.userPhone = userPhone;
     }
 
-    @Column(name="USER_CODE")
+    @Basic
+    @Column(name="USER_CODE", nullable = true)
     public String getUserCode() {
         return userCode;
     }
@@ -69,12 +75,32 @@ public class User {
         this.userCode = userCode;
     }
 
-    @Column(name="USER_PASSWORD")
+    @Column(name="USER_PASSWORD", nullable = true)
     public String getUserPassWord() {
         return userPassWord;
     }
 
     public void setUserPassWord(String userPassWord) {
         this.userPassWord = userPassWord;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.id) &&
+                Objects.equals(userName, user.userName) &&
+                Objects.equals(userSex, user.userSex) &&
+                Objects.equals(userIdentity, user.userIdentity) &&
+                Objects.equals(userPhone, user.userPhone) &&
+                Objects.equals(userCode, user.userCode) &&
+                Objects.equals(userPassWord, user.userPassWord);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, userName, userSex, userIdentity, userPhone, userCode, userPassWord);
     }
 }

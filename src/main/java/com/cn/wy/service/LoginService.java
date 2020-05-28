@@ -1,4 +1,4 @@
-package com.cn.wy.service.impl.service;
+package com.cn.wy.service;
 
 import java.util.Map;
 

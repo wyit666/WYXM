@@ -1,9 +1,8 @@
 package com.cn.wy.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
+@Entity
 @Table(name="t_user_permission")
 public class UserPermission {
 
@@ -12,7 +11,7 @@ public class UserPermission {
     private String permissionId;
 
     @Id
-    @Column(name = "ID")
+    @Column(name = "ID", nullable = true)
     public String getId() {
         return id;
     }
@@ -21,7 +20,8 @@ public class UserPermission {
         this.id = id;
     }
 
-    @Column(name = "USER_ID")
+    @Basic
+    @Column(name = "USER_ID", nullable = true)
     public String getUserId() {
         return userId;
     }
@@ -30,7 +30,8 @@ public class UserPermission {
         this.userId = userId;
     }
 
-    @Column(name = "PERMISSION_ID")
+    @Basic
+    @Column(name = "PERMISSION_ID", nullable = true)
     public String getPermissionId() {
         return permissionId;
     }

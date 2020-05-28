@@ -12,15 +12,18 @@ spring:
       prefix: /WEB-INF/
       suffix: .jsp
   datasource:
-    url: jdbc:mysql://localhost:3306/wu?characterEncoding=utf8&characterEncoding=utf-8
+    url: jdbc:mysql://59.110.236.98:3306/wu?characterEncoding=utf8&characterEncoding=utf-8
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: root
+    testWhileIdle: true
+    validationQuery: "select * from dual"
 
   jpa:
     database: mysql
     show-sql: true
     hibernate:
       ddl-auto: update
+      format_sql: true
       naming_strategy: org.hibernate.cfg.improvedNamingStrategy
       dialect: org.hibernate.dialect.MySQL5Dialect

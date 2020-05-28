@@ -1,11 +1,13 @@
 package com.cn.wy.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+@Entity
 @Table(name="t_permission")
-public class Permission {
+public class Permission implements Serializable {
 
     private String id;
     private String permissionName;
@@ -13,8 +15,10 @@ public class Permission {
     private String permissionSrc;
     private String sort;
 
+    private List<Permission> Childrens = new ArrayList<>();
+
     @Id
-    @Column(name = "ID")
+    @Column(name = "ID", nullable = true)
     public String getId() {
         return id;
     }
@@ -23,7 +27,8 @@ public class Permission {
         this.id = id;
     }
 
-    @Column(name = "PERMISSION_NAME")
+    @Basic
+    @Column(name = "PERMISSION_NAME", nullable = true)
     public String getPermissionName() {
         return permissionName;
     }
@@ -32,7 +37,8 @@ public class Permission {
         this.permissionName = permissionName;
     }
 
-    @Column(name = "PERMISSION_PID")
+    @Basic
+    @Column(name = "PERMISSION_PID", nullable = true)
     public String getPermissionPid() {
         return permissionPid;
     }
@@ -41,7 +47,8 @@ public class Permission {
         this.permissionPid = permissionPid;
     }
 
-    @Column(name = "PERMISSION_SRC")
+    @Basic
+    @Column(name = "PERMISSION_SRC", nullable = true)
     public String getPermissionSrc() {
         return permissionSrc;
     }
@@ -50,12 +57,22 @@ public class Permission {
         this.permissionSrc = permissionSrc;
     }
 
-    @Column(name = "SORT")
+    @Basic
+    @Column(name = "SORT", nullable = true)
     public String getSort() {
         return sort;
     }
 
     public void setSort(String sort) {
         this.sort = sort;
+    }
+
+    @Transient
+    public List<Permission> getChildrens() {
+        return Childrens;
+    }
+
+    public void setChildrens(List<Permission> childrens) {
+        Childrens = childrens;
     }
 }

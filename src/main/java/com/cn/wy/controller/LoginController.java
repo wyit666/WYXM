@@ -1,6 +1,6 @@
 package com.cn.wy.controller;
 
-import com.cn.wy.service.impl.service.LoginService;
+import com.cn.wy.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
