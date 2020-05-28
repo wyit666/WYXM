@@ -1,0 +1,26 @@
+#访问相关配置
+server:
+  port: 8080
+  tomcat:
+      uri-encoding: UTF-8
+#项目访问名称，如果不配置直接访问bean就可以
+#server.servlet.context-path=/wyxm
+#Spring boot视图配置
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/
+      suffix: .jsp
+  datasource:
+    url: jdbc:mysql://localhost:3306/wu?characterEncoding=utf8&characterEncoding=utf-8
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: root
+
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming_strategy: org.hibernate.cfg.improvedNamingStrategy
+      dialect: org.hibernate.dialect.MySQL5Dialect
