@@ -25,11 +25,11 @@
 		<div class="headR">
 			<p class="p1">
 				欢迎，
-				<?php echo cookie('name')?>
+				${user.userName}
 			</p>
 			<p class="p2">
 				<a href="#" class="resetPWD">重置密码</a>&nbsp;&nbsp;<a
-					href="{:U('Admin/Index/exit')}" class="goOut">退出</a>
+					href="<%=path%>/jsp/login" class="goOut">退出</a>
 			</p>
 		</div>
 		<!-- onclick="{if(confirm(&quot;确定退出吗&quot;)){return true;}return false;}" -->

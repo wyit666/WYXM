@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface LoginDao extends JpaRepository<User, String>, JpaSpecificationExecutor<User> {
+public interface UserDao extends JpaRepository<User, String>, JpaSpecificationExecutor<User> {
 
     @Query(value = "from User t where t.userCode=:userCode and t.userPassWord=:userPassWord")
     User findUserByCodeAndPaw(@Param("userCode") String userCode, @Param("userPassWord") String userPassword);

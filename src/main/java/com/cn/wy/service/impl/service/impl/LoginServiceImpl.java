@@ -1,6 +1,6 @@
 package com.cn.wy.service.impl.service.impl;
 
-import com.cn.wy.dao.LoginDao;
+import com.cn.wy.dao.UserDao;
 import com.cn.wy.entity.User;
 import com.cn.wy.service.impl.service.LoginService;
 import com.cn.wy.util.StringUtil;
@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,7 +18,9 @@ import java.util.Map;
 public class LoginServiceImpl implements LoginService {
 
     @Autowired
-    private LoginDao loginDao;
+    private UserDao userDao;
+    @Autowired
+    private HttpServletRequest request;
 
     /**
      * 用户登录
@@ -26,9 +30,10 @@ public class LoginServiceImpl implements LoginService {
         Map<String, Object> map = new HashMap<>();
         try {
             if(StringUtil.isNotEmpty(userCode) && StringUtil.isNotEmpty(userPassword)){
-                User user = loginDao.findUserByCodeAndPaw(userCode, userPassword);
+                User user = userDao.findUserByCodeAndPaw(userCode, userPassword);
+                HttpSession session = request.getSession();
+                session.setAttribute("user", user);
                 if(user!=null){
-                    map.put("data", user);
                     map.put("return", "登录成功!");
                     map.put("success", "true");
                 }else{
