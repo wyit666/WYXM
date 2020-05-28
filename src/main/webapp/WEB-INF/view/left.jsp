@@ -25,7 +25,7 @@
 					<img src="<%=path%>/static/img/coin01.png" />&nbsp;&nbsp;首页
 				</div>
 			</a>--%>
-			 <dl class="system_log">
+			 <%--<dl class="system_log">
 				<dt>
 					<img class="icon1" src="<%=path%>/static/img/coin01.png" />
 					<img class="icon2"src="<%=path%>/static/img/coin02.png" />首页
@@ -46,11 +46,19 @@
 					<a class="cks" href="<%=path%>/jsp/user" target="main">管理员管理</a>
 					<img class="icon5" src="<%=path%>/static/img/coin21.png" />
 				</dd>
-			</dl>
+			</dl>--%>
 		</div>
 	</div>
 </body>
 <script type="text/javascript">
-
+    /*$(".leftsidebar_box")
+		.append("<dl class='system_log'>")
+			.append("<dt>")
+				.append("<img class='icon1' src='<%=path%>/static/img/coin03.png'/>")
+				.append("<img class='icon2' src='<%=path%>/static/img/coin04.png'/>").append("网站管理")
+				.append("<img class='icon3' src='<%=path%>/static/img/coin19.png'/>")
+				.append("<img class='icon4' src='<%=path%>/static/img/coin20.png'/>")
+        	.append("</dt>")
+		.append("</dl>")*/
 </script>
 </html>
