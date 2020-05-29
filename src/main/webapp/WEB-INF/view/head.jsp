@@ -13,7 +13,9 @@
 <title>头部-CRM</title>
 <link rel="stylesheet" type="text/css" href="<%=path%>/static/css/public.css" />
 <script type="text/javascript" src="<%=path%>/static/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="<%=path%>/static/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<%=path%>/static/js/public.js"></script>
+<script type="text/javascript" src="<%=path%>/static/js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -24,30 +26,15 @@
 		</div>
 		<div class="headR">
 			<p class="p1">
-				欢迎，
-				${user.userName}
+				欢迎,${user.userName}
 			</p>
 			<p class="p2">
-				<a href="#" class="resetPWD">重置密码</a>&nbsp;&nbsp;<a
-					href="<%=path%>/jsp/login" class="goOut">退出</a>
-			</p>
-		</div>
-		<!-- onclick="{if(confirm(&quot;确定退出吗&quot;)){return true;}return false;}" -->
-	</div>
-
-	<div class="closeOut">
-		<div class="coDiv">
-			<p class="p1">
-				<span>X</span>
-			</p>
-			<p class="p2">确定退出当前用户？</p>
-			<P class="p3">
-				<a class="ok yes" href="#">确定</a><a class="ok no" href="#">取消</a>
+				<a href="#" class="resetPWD">重置密码</a>&nbsp;&nbsp;
+				<a href="#" class="goOut">退出</a>
 			</p>
 		</div>
 	</div>
-
-
-
 </body>
 </html>
+<script type="text/javascript">
+</script>

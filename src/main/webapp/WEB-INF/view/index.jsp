@@ -21,11 +21,4 @@
 		<frame src="<%=path%>/jsp/main" name="main" scrolling="yes" noresize="noresize" id="rightFrame3" title="rightFrame">
 	</frameset>
 </frameset>
-<script type="text/javascript">
-    /*$(function() {// 初始化内容
-        //$("#mainFrame1").href("${path}/jsp/head");
-        //$("#mainFrame2").href("${path}/jsp/head");
-        //$("#mainFrame3").href("${path}/jsp/head");
-    });*/
-</script>
 </html>
