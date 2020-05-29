@@ -22,16 +22,25 @@ public class JspController {
     @Autowired
     private HttpSession session;
 
+    /**
+     * 登录页面
+     */
     @GetMapping("/login")
     public String Login(){
         return "login";
     }
 
+    /**
+     * 登录后的页面
+     */
     @GetMapping("/index")
     public String Index(){
         return "view/index";
     }
 
+    /**
+     * 请求头页面
+     */
     @GetMapping("/head")
     public ModelAndView Head(){
         ModelAndView modelAndView = new ModelAndView();
@@ -45,6 +54,9 @@ public class JspController {
         return modelAndView;
     }
 
+    /**
+     * 左侧菜单
+     */
     @GetMapping("/left")
     public ModelAndView Left(){
         ModelAndView modelAndView = new ModelAndView();
@@ -61,6 +73,9 @@ public class JspController {
         return modelAndView;
     }
 
+    /**
+     * 点击左侧菜单后的页面
+     */
     @GetMapping("/main")
     public String Main(){
         return "view/main";

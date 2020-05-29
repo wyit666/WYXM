@@ -17,6 +17,9 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
+    /**
+     * 登录
+     */
     @PostMapping("/login")
     @ResponseBody
     public Map<String, Object> Login(String userCode, String userPassword){
