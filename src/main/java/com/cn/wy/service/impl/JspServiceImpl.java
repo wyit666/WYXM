@@ -24,7 +24,7 @@ public class JspServiceImpl implements JspService {
         try {
             String sql = "select p.* from t_user_permission up " +
                     "left join t_permission p on up.permission_id = p.id " +
-                    "where up.user_id =?0";
+                    "where up.user_id =?0 order by p.sort";
             permissions = permissionDao.findListBySql(sql, userId);
             permissionList = treeMenuList(permissions, "0");
         }catch (Exception e){

@@ -14,6 +14,8 @@ public class Permission implements Serializable {
     private String permissionPid;
     private String permissionSrc;
     private String sort;
+    private String permissionClass;
+    private String permissionImg;
 
     private List<Permission> Childrens = new ArrayList<>();
 
@@ -65,6 +67,26 @@ public class Permission implements Serializable {
 
     public void setSort(String sort) {
         this.sort = sort;
+    }
+
+    @Basic
+    @Column(name = "PERMISSION_CLASS", nullable = true)
+    public String getPermissionClass() {
+        return permissionClass;
+    }
+
+    public void setPermissionClass(String permissionClass) {
+        this.permissionClass = permissionClass;
+    }
+
+    @Basic
+    @Column(name = "PERMISSION_IMG", nullable = true)
+    public String getPermissionImg() {
+        return permissionImg;
+    }
+
+    public void setPermissionImg(String permissionImg) {
+        this.permissionImg = permissionImg;
     }
 
     @Transient
