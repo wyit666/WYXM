@@ -13,9 +13,7 @@
 <title>头部-CRM</title>
 <link rel="stylesheet" type="text/css" href="<%=path%>/static/css/public.css" />
 <script type="text/javascript" src="<%=path%>/static/js/jquery-1.11.3.min.js"></script>
-<script type="text/javascript" src="<%=path%>/static/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="<%=path%>/static/js/public.js"></script>
-<script type="text/javascript" src="<%=path%>/static/js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -30,11 +28,9 @@
 			</p>
 			<p class="p2">
 				<a href="#" class="resetPWD">重置密码</a>&nbsp;&nbsp;
-				<a href="#" class="goOut">退出</a>
+				<a href="#" class="goOut" id="tc">退出</a>
 			</p>
 		</div>
 	</div>
 </body>
 </html>
-<script type="text/javascript">
-</script>

@@ -22,3 +22,6 @@
 	</frameset>
 </frameset>
 </html>
+<script type="text/javascript">
+		$("#tc").onclick
+</script>
