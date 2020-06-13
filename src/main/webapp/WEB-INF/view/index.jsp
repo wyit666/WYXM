@@ -11,6 +11,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>首页-CRM</title>
+<script type="text/javascript" src="<%=path%>/static/js/jquery-1.11.3.min.js"></script>
 </head>
 <frameset rows="100,*" cols="*" scrolling="No" framespacing="0" frameborder="no" border="0">
 	<!-- 引用头部 -->
@@ -23,5 +24,5 @@
 </frameset>
 </html>
 <script type="text/javascript">
-		$("#tc").onclick
+
 </script>

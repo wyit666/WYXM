@@ -27,10 +27,17 @@
 				欢迎,${user.userName}
 			</p>
 			<p class="p2">
-				<a href="#" class="resetPWD">重置密码</a>&nbsp;&nbsp;
-				<a href="#" class="goOut" id="tc">退出</a>
+				<a href="javascript:void(0)" class="resetPWD">重置密码</a>&nbsp;&nbsp;
+				<a href="#" class="goOut">退出</a>
 			</p>
 		</div>
 	</div>
 </body>
 </html>
+<script type="text/javascript">
+    $(".goOut").click(function(){
+        if (confirm("是否退出登录!")) {
+            window.top.location.href="${path}/jsp/login";
+        }
+    });
+</script>
