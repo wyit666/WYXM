@@ -4,7 +4,7 @@ import com.cn.wy.entity.Permission;
 
 import java.util.List;
 
-public interface JspService {
+public interface PermissionService {
 
     List<Permission> selUserPermission(String userId);
 }

@@ -2,14 +2,13 @@ package com.cn.wy.controller;
 
 import com.cn.wy.entity.Permission;
 import com.cn.wy.entity.User;
-import com.cn.wy.service.JspService;
+import com.cn.wy.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -18,7 +17,7 @@ import java.util.List;
 public class JspController {
 
     @Autowired
-    private JspService jspService;
+    private PermissionService permissionService;
     @Autowired
     private HttpSession session;
 
@@ -63,7 +62,7 @@ public class JspController {
         try {
             User user = (User) session.getAttribute(session.getId());
             if(user!=null){
-                List<Permission> permissions = jspService.selUserPermission(user.getId());
+                List<Permission> permissions = permissionService.selUserPermission(user.getId());
                 modelAndView.addObject("permissions", permissions);
             }
             modelAndView.setViewName("view/left");
@@ -74,10 +73,30 @@ public class JspController {
     }
 
     /**
-     * 点击左侧菜单后的页面
+     * 首页
      */
     @GetMapping("/main")
     public String Main(){
         return "view/main";
     }
+
+    /**
+     * 修改密码页面
+     */
+    @GetMapping("/changepwd")
+    public ModelAndView Changepwd(){
+        ModelAndView modelAndView = new ModelAndView();
+        try {
+            User user = (User) session.getAttribute(session.getId());
+            if(user!=null){
+                List<Permission> permissions = permissionService.selUserPermission(user.getId());
+                modelAndView.addObject("user", user);
+            }
+            modelAndView.setViewName("main/changepwd");
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return modelAndView;
+    }
+
 }

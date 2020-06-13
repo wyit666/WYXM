@@ -2,8 +2,7 @@ package com.cn.wy.service.impl;
 
 import com.cn.wy.dao.PermissionDao;
 import com.cn.wy.entity.Permission;
-import com.cn.wy.entity.User;
-import com.cn.wy.service.JspService;
+import com.cn.wy.service.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +11,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class JspServiceImpl implements JspService {
+public class PermissionServiceImpl implements PermissionService {
 
     @Autowired
     private PermissionDao permissionDao;

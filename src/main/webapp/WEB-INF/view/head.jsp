@@ -27,7 +27,7 @@
 				欢迎,${user.userName}
 			</p>
 			<p class="p2">
-				<a href="javascript:void(0)" class="resetPWD">重置密码</a>&nbsp;&nbsp;
+				<a href="#" class="resetPWD">重置密码</a>&nbsp;&nbsp;
 				<a href="#" class="goOut">退出</a>
 			</p>
 		</div>
@@ -38,6 +38,12 @@
     $(".goOut").click(function(){
         if (confirm("是否退出登录!")) {
             window.top.location.href="${path}/jsp/login";
+        }
+    });
+
+    $(".resetPWD").click(function(){
+        if (confirm("是否重置密码!")) {
+            window.top.location.href="${path}/jsp/changepwd";
         }
     });
 </script>
