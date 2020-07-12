@@ -44,7 +44,12 @@
 								<dd>
 									<img class="coin11" src="<%=path%>/static/img/coin111.png" />
 									<img class="coin22" src="<%=path%>/static/img/coin222.png" />
-									<a class="cks" href="<%=path%>${children.permissionSrc}" target="main">${children.permissionName}</a>
+									<c:if test="${children.permissionName!='退出'}">
+										<a class="cks" href="<%=path%>${children.permissionSrc}" target="main">${children.permissionName}</a>
+									</c:if>
+									<c:if test="${children.permissionName=='退出'}">
+										<a class="cks" href="#" id="tc">${children.permissionName}</a>
+									</c:if>
 									<img class="icon5" src="<%=path%>/static/img/coin21.png" />
 								</dd>
 							</c:forEach>
@@ -57,5 +62,9 @@
 </body>
 </html>
 <script type="text/javascript">
-
+    $("#tc").click(function(){
+        if (confirm("是否退出登录!")) {
+            window.top.location.href="${path}/jsp/login";
+        }
+    });
 </script>
