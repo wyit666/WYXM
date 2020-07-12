@@ -19,7 +19,7 @@
 		<div class="pageTop">
 			<div class="page">
 				<img src="<%=path%>/static/img/coin02.png" />
-				<span><a href="<%=path%>/jsp/main">首页</a>&nbsp;-&nbsp;<a href="#">系统管理</a>&nbsp;-</span>&nbsp;修改密码
+				<span><a href="#" id="sy">首页</a>&nbsp;-&nbsp;<a href="#">系统管理</a>&nbsp;-</span>&nbsp;修改密码
 			</div>
 		</div>
 		<div class="page ">
@@ -93,5 +93,9 @@ var pwd = document.getElementById('pwd2').value.trim();
   $("#pwd3").parent().find(".imga").hide();
  };
 }
+
+$("#sy").click(function(){
+    window.top.location.href="${path}/jsp/index";
+});
 </script>
 </html>
