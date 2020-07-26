@@ -33,7 +33,7 @@
 				</div>
 				<div class="bbD">
 					&nbsp;&nbsp;&nbsp;&nbsp;输入旧密码：
-					<input type="password" class="input3" onblur="checkpwd1()" id="pwd1" />
+					<input type="password" class="input3" onblur="checkpwd1('${user.userPassWord}')" id="pwd1" />
 					<img class="imga" src="<%=path%>/static/img/ok.png" />
 					<img class="imgb" src="<%=path%>/static/img/no.png" />
 				</div>
@@ -52,7 +52,7 @@
 				<div class="bbD">
 					<p class="bbDP">
 						<button class="btn_ok btn_yes" href="#">提交</button>
-						<a class="btn_ok btn_no" href="#">取消</a>
+						<a class="btn_ok btn_no" href="#" id="qx">取消</a>
 					</p>
 				</div>
 			</div>
@@ -62,39 +62,44 @@
 	</div>
 </body>
 <script type="text/javascript">
-function checkpwd1(){
-var user = document.getElementById('pwd1').value.trim();
- if (user.length >= 6 && user.length <= 12) {
-  $("#pwd1").parent().find(".imga").show();
-  $("#pwd1").parent().find(".imgb").hide();
- }else{
-  $("#pwd1").parent().find(".imgb").show();
-  $("#pwd1").parent().find(".imga").hide();
- };
+function checkpwd1(oldPwd){
+    var pwd1 = document.getElementById('pwd1').value.trim();
+    if(oldPwd==pwd1){ //密码相同
+        $("#pwd1").parent().find(".imga").show();
+        $("#pwd1").parent().find(".imgb").hide();
+    }else{
+        alert("和原来的密码不一致!");
+        $("#pwd1").parent().find(".imgb").show();
+        $("#pwd1").parent().find(".imga").hide();
+    }
 }
 function checkpwd2(){
-var user = document.getElementById('pwd2').value.trim();
- if (user.length >= 6 && user.length <= 12) {
-  $("#pwd2").parent().find(".imga").show();
-  $("#pwd2").parent().find(".imgb").hide();
- }else{
-  $("#pwd2").parent().find(".imgb").show();
-  $("#pwd2").parent().find(".imga").hide();
- };
+    var pwd2 = document.getElementById('pwd2').value.trim();
+    if(pwd2==null || pwd2==''){
+        $("#pwd3").parent().find(".imgb").show();
+        $("#pwd3").parent().find(".imga").hide();
+    }else{
+        $("#pwd1").parent().find(".imga").show();
+        $("#pwd1").parent().find(".imgb").hide();
+    }
 }
 function checkpwd3(){
-var user = document.getElementById('pwd3').value.trim();
-var pwd = document.getElementById('pwd2').value.trim();
- if (user.length >= 6 && user.length <= 12 && user == pwd) {
-  $("#pwd3").parent().find(".imga").show();
-  $("#pwd3").parent().find(".imgb").hide();
- }else{
-   $("#pwd3").parent().find(".imgb").show();
-  $("#pwd3").parent().find(".imga").hide();
- };
+    var pwd2 = document.getElementById('pwd2').value.trim();
+    var pwd3 = document.getElementById('pwd3').value.trim();
+    if (pwd3==pwd2) {
+        $("#pwd3").parent().find(".imga").show();
+        $("#pwd3").parent().find(".imgb").hide();
+    }else{
+        alert("和新密码不一致!");
+        $("#pwd3").parent().find(".imgb").show();
+        $("#pwd3").parent().find(".imga").hide();
+    };
 }
 
 $("#sy").click(function(){
+    window.top.location.href="${path}/jsp/index";
+});
+$("#qx").click(function(){
     window.top.location.href="${path}/jsp/index";
 });
 </script>
